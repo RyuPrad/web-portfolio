@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Developer Portfolio</title>
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+
+<!-- Landing page -->
+<div class="landing-page">
+    <div class="intro">
+        <h1>Welcome to My Web Developer Portfolio</h1>
+        <p>Here you will find out about my skills and experience as a web developer.</p>
+    </div>
+    <div class="achievements">
+        <h2>My Achievements as a Web Developer</h2>
+        <ul>
+            <li>Developed 3 websites for clients</li>
+            <li>Provided maintenance and support for 10+ websites</li>
+            <li>Created a fully responsive mobile website</li>
+        </ul>
+    </div>
+    <div class="featured-projects">
+        <h2>Featured Projects</h2>
+        <div class="slider">
+            <div><img src="project1.png" alt="Project 1"></div>
+            <div><img src="project2.png" alt="Project 2"></div>
+            <div><img src="project3.png" alt="Project 3"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Portfolio page -->
+<div class="portfolio-page">
+    <h2>My Projects</h2>
+    <div class="project">
+        <h3>Project 1</h3>
+        <div class="project-info">
+            <img src="project1.png" alt="Project 1">
+            <div class="project-details">
+                <h4>Project Details</h4>
+                <p>This was an e-commerce website created for a client.</p>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <h3>Project 2</h3>
+        <div class="project-info">
+            <img src="project2.png" alt="Project 2">
+            <div class="project-details">
+                <h4>Project Details</h4>
+                <p>This was a portfolio website created for a photographer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="project">
+        <h3>Project 3</h3>
+        <div class="project-info">
+            <img src="project3.png" alt="Project 3">
+            <div class="project-details">
+                <h4>Project Details</h4>
+                <p>This was a blog website created for a writer.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact page -->
+<div class="contact-page">
+    <h2>Contact Me</h2>
+    <form action="index.html" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="email" name="email" placeholder="Email">
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <textarea name="message" placeholder="Your Message"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    <p>Email: yourname@example.com</p>
+    <p>Phone: 123-456-7890</p>
+</div>
+
+<script>
+    $(document).ready(function(){
+        $('.slider').slick({
+            autoplay: true,
+            arrows: false
+        });
+
+        $('.project-info').on('mouseenter', function() {
+            $(this).find('.project-details').stop().slideDown(200);
+        }).on('mouseleave', function() {
+            $(this).find('.project-details').stop().slideUp(200);
+        });
+    });
+</script>
+
+</body>
+</html>
+
+<style>
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .landing-page {
+        text-align: center;
+    }
+
+    .intro {
+        margin: 40px 0;
+    }
+
+    .achievements {
+        margin: 40px 0;
+    }
+
+    .featured-projects {
+        display: flex;
+        justify-content: center;
+        margin: 40px 0;
+    }
+
+    .slider {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .portfolio-page {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .project {
+        margin: 40px 0;
+    }
+
+    .project-info {
+        position: relative;
+    }
+
+    .project-details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #f3f3f3;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+        display: none;
+    }
+
+    .contact-page {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 80%;
+        margin: 40px auto;
+    }
+
+    form input, form textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        box-sizing: border-box;
+        font-size: 16px;
+    }
+
+    /* ADDED STYLES */
+
+    .intro h1 {
+        font-size: 2.5rem;
+        color: #FF8C00;
+    }
+
+    .achievements h2 {
+        color: #FF8C00;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .slider img {
+        border-radius: 10px;
+        padding: 10px;
+        transition: transform 0.25s ease;
+    }
+
+    .slider img:hover {
+        transform: scale(1.2);
+    }
+
+    .project-details {
+        padding: 15px;
+        background-color: #FF8C00;
+        color: #FFF;
+    }
+
+    .contact-page {
+        background-color: #FF8C00;
+        color: #FFF;
+    }
+
+    form input, form textarea {
+        background-color: #FFF;
+        border: 1px solid #FF8C00;
+    }
+
+    form input {
+        margin-bottom: 15px;
+    }
+
+    form input[type="submit"] {
+        background-color: #FF8C00;
+        color: #FFF;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .intro {
+            margin: 20px 0;
+        }
+
+        .slider {
+            width: 95%;
+        }
+    }
+</style>
